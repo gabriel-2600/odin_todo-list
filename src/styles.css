@@ -78,7 +78,7 @@ nav {
 h1 {
   margin-bottom: 10px;
   font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .project-bar {
@@ -90,7 +90,7 @@ h1 {
   border-bottom: 2px solid black;
 }
 
-h2 {
+.project-header h2 {
   margin-bottom: 10px;
   font-size: 1.8rem;
   font-weight: 300;
@@ -114,4 +114,9 @@ nav button {
 
 nav button:hover {
   cursor: pointer;
+}
+
+/* Content */
+.content {
+  background-color: var(--semi-white);
 }

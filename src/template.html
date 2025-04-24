@@ -7,25 +7,43 @@
     <title>Todo Tracker</title>
   </head>
   <body>
+    <dialog class="project-dialog">
+      <form action="" class="project-form">
+        <div>
+          <label for="project-name">Project Name: </label>
+          <input type="text" id="project-name" required />
+        </div>
+
+        <button type="submit" class="create-project-btn">Create Project</button>
+      </form>
+
+      <button type="button" class="project-cancel-btn">Cancel</button>
+    </dialog>
+
     <div class="main-container">
       <nav>
         <h1>Todo Tracker</h1>
 
-        <button>My Todos</button>
+        <div class="default-todo-container"></div>
 
         <div class="project-bar">
           <div class="project-header">
             <h2>Projects</h2>
-            <button>Add Project</button>
+            <button class="add-project-btn">Add Project</button>
           </div>
 
-          <div class="project-lists-bar">
-            <button>project 1</button>
-          </div>
+          <div class="project-list-bar"></div>
         </div>
       </nav>
 
-      <div class="content"></div>
+      <div class="content">
+        <div class="content-header">
+          <h3>My Todos</h3>
+          <button class="add-task-btn">Add Task</button>
+        </div>
+
+        <div class="todo-content"></div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,22 @@
+class Project {
+  constructor(id, projectName) {
+    this.id = id;
+    this.projectName = projectName;
+    this.todoItems = [];
+  }
+}
+
+// Default Project
+const defaultProject = new Project("0", "My Todos");
+
+// Store the Project Objects into the array
+const projectList = [];
+
+function createProjectObject(projectName) {
+  const randomID = crypto.randomUUID();
+
+  const project = new Project(randomID, projectName);
+  projectList.push(project);
+}
+
+export { projectList, defaultProject, createProjectObject };
