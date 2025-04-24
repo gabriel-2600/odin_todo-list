@@ -1,4 +1,5 @@
 import { defaultProject, projectList } from "./project";
+import "./project-style.css";
 
 function displayDefaultProject() {
   const defaultTodoContainer = document.querySelector(

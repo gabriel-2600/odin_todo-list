@@ -88,16 +88,13 @@ h1 {
 .project-header {
   padding-bottom: 20px;
   border-bottom: 2px solid black;
+  margin-bottom: 20px;
 }
 
 .project-header h2 {
   margin-bottom: 10px;
   font-size: 1.8rem;
   font-weight: 300;
-}
-
-.project-lists-bar {
-  padding-top: 20px;
 }
 
 nav button {

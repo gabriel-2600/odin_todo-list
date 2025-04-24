@@ -12,11 +12,14 @@ const defaultProject = new Project("0", "My Todos");
 // Store the Project Objects into the array
 const projectList = [];
 
+// Create Project
 function createProjectObject(projectName) {
   const randomID = crypto.randomUUID();
 
   const project = new Project(randomID, projectName);
   projectList.push(project);
 }
+
+// Delete Project
 
 export { projectList, defaultProject, createProjectObject };
