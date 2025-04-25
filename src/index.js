@@ -44,13 +44,14 @@ addProjectBtn.addEventListener("click", () => {
   showProjectFormDialog();
 });
 
-const projectListBar = document.querySelector(".project-list-bar");
-projectListBar.addEventListener("click", (event) => {
+const nav = document.querySelector("nav");
+nav.addEventListener("click", (event) => {
   const projectContentDiv = event.target.closest(".project-content");
   const deleteProjectBtn = event.target.closest(".delete-project-container");
 
   if (projectContentDiv) {
-    console.log("project selected");
+    const projectID = projectContentDiv.parentElement.dataset.id;
+    console.log("project selected " + projectID);
   }
 
   if (deleteProjectBtn) {

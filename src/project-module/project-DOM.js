@@ -11,7 +11,11 @@ function displayDefaultProject() {
   const defaultProjectName = document.createElement("h3");
   defaultProjectName.textContent = defaultProject.projectName;
 
-  defaultTodoContainer.appendChild(defaultProjectName);
+  const projectContent = document.createElement("div");
+  projectContent.classList.add("project-content");
+  projectContent.appendChild(defaultProjectName);
+
+  defaultTodoContainer.appendChild(projectContent);
 }
 
 function displayProjects() {
