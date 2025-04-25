@@ -40,7 +40,10 @@ p {
   --blue: #1b56fd;
   --light-blue: #60b5ff;
   --sky-blue: #afddff;
+  --pale-blue: #c6e7ff;
   --semi-white: #fbfbfb;
+  --light-red: #eabebe;
+  --dark-red: #af6d6d;
 }
 
 /* Main Container */

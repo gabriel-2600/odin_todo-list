@@ -33,7 +33,10 @@ class TodoItem {
 // });
 
 import { displayDefaultProject } from "./project-module/project-DOM.js";
-import { showProjectFormDialog } from "./project-module/project-events.js";
+import {
+  showProjectFormDialog,
+  deleteProjectAndDisplay,
+} from "./project-module/project-events.js";
 displayDefaultProject();
 
 const addProjectBtn = document.querySelector(".add-project-btn");
@@ -41,4 +44,18 @@ addProjectBtn.addEventListener("click", () => {
   showProjectFormDialog();
 });
 
-const deleteProjectBtn = document.querySelector(".delete-project-btn");
+const projectListBar = document.querySelector(".project-list-bar");
+projectListBar.addEventListener("click", (event) => {
+  const projectContentDiv = event.target.closest(".project-content");
+  const deleteProjectBtn = event.target.closest(".delete-project-container");
+
+  if (projectContentDiv) {
+    console.log("project selected");
+  }
+
+  if (deleteProjectBtn) {
+    const projectID = deleteProjectBtn.parentElement.dataset.id;
+
+    deleteProjectAndDisplay(projectID);
+  }
+});

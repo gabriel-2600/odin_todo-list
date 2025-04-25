@@ -1,43 +1,49 @@
+/* 
+:root {
+   --blue: #1b56fd;
+  --light-blue: #60b5ff;
+  --sky-blue: #afddff;
+  --pale-blue: #c6e7ff;
+  --semi-white: #fbfbfb;
+  --light-red: #eabebe;
+  --dark-red: #af6d6d;
+} */
+
 .project {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.project-content {
+  width: 210px;
+  padding: 5px;
   border-radius: 8px;
-  padding: 0 10px;
-}
-
-.project h3 {
-  width: 200px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.delete-project-btn {
-  border: 0;
-  background-color: transparent;
-
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-}
-
-.hide {
-  display: none;
-}
-
-.project:hover {
-  cursor: pointer;
   background-color: var(--light-blue);
 }
 
-.project:hover > .hide {
-  display: flex;
+.project-content h3 {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.delete-project-btn:hover {
-  border: 1px solid red;
+.delete-project-container {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--light-red);
+  border-radius: 8px;
+}
+
+.project-content:hover {
+  cursor: pointer;
+  background-color: var(--pale-blue);
+}
+
+.delete-project-container:hover {
+  cursor: pointer;
+  background-color: var(--dark-red);
 }

@@ -21,5 +21,17 @@ function createProjectObject(projectName) {
 }
 
 // Delete Project
+function deleteProjectObject(projectID) {
+  for (let i = 0; i < projectList.length; i++) {
+    if (projectList[i].id === projectID) {
+      projectList.splice(i, 1);
+    }
+  }
+}
 
-export { projectList, defaultProject, createProjectObject };
+export {
+  projectList,
+  defaultProject,
+  createProjectObject,
+  deleteProjectObject,
+};

@@ -26,18 +26,21 @@ function displayProjects() {
     const createdProjectName = document.createElement("h3");
     createdProjectName.textContent = projectList[i].projectName;
 
-    const projectDeleteBtn = document.createElement("button");
-    projectDeleteBtn.classList.add("delete-project-btn", "hide");
+    const projectContent = document.createElement("div");
+    projectContent.classList.add("project-content");
+    projectContent.appendChild(createdProjectName);
 
     const deleteBtnImage = document.createElement("img");
     deleteBtnImage.src = deletePNG;
     deleteBtnImage.width = "20";
     deleteBtnImage.height = "20";
 
-    projectDeleteBtn.appendChild(deleteBtnImage);
+    const deleteProjectContainer = document.createElement("div");
+    deleteProjectContainer.classList.add("delete-project-container");
+    deleteProjectContainer.appendChild(deleteBtnImage);
 
-    projectDiv.appendChild(createdProjectName);
-    projectDiv.appendChild(projectDeleteBtn);
+    projectDiv.appendChild(projectContent);
+    projectDiv.appendChild(deleteProjectContainer);
 
     projectListBar.appendChild(projectDiv);
   }
