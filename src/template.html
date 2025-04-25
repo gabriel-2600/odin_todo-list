@@ -15,9 +15,57 @@
         </div>
 
         <button type="submit" class="create-project-btn">Create Project</button>
+        <button type="reset" class="project-cancel-btn">Cancel</button>
       </form>
+    </dialog>
 
-      <button type="button" class="project-cancel-btn">Cancel</button>
+    <dialog class="task-dialog">
+      <form action="" class="todo-form">
+        <div>
+          <label for="todo-name">Task Name: </label>
+          <input type="text" id="todo-name" required />
+        </div>
+
+        <div>
+          <label for="todo-description">Description: </label>
+          <textarea id="todo-description"></textarea>
+        </div>
+
+        <div>
+          <label for="todo-due-date">Due Date: </label>
+          <input type="date" id="todo-due-date" />
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="todo-low-priority"
+            name="todo-priority"
+            value="low"
+            checked
+          />
+          <label for="todo-low-priority">Low Priority</label>
+
+          <input
+            type="radio"
+            id="todo-medium-priority"
+            name="todo-priority"
+            value="medium"
+          />
+          <label for="todo-medium-priority">Medium Priority</label>
+
+          <input
+            type="radio"
+            id="todo-high-priority"
+            name="todo-priority"
+            value="high"
+          />
+          <label for="todo-high-priority">High Priority</label>
+        </div>
+
+        <button type="submit" class="create-task-btn">Create Task</button>
+        <button type="reset" class="task-cancel-btn">Cancel</button>
+      </form>
     </dialog>
 
     <div class="main-container">
@@ -42,7 +90,7 @@
           <button class="add-task-btn">Add Task</button>
         </div>
 
-        <div class="todo-content"></div>
+        <div class="todo-container"></div>
       </div>
     </div>
   </body>

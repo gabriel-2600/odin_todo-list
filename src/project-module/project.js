@@ -5,12 +5,14 @@ class Project {
     this.todoItems = [];
   }
 }
+// Store the Project Objects into the array
+const projectList = [];
 
 // Default Project
 const defaultProject = new Project("0", "My Todos");
-
-// Store the Project Objects into the array
-const projectList = [];
+const getDefaultProjectID = defaultProject.id;
+defaultProject.todoItems.push("test");
+projectList.push(defaultProject);
 
 // Create Project
 function createProjectObject(projectName) {
@@ -32,6 +34,7 @@ function deleteProjectObject(projectID) {
 export {
   projectList,
   defaultProject,
+  getDefaultProjectID,
   createProjectObject,
   deleteProjectObject,
 };

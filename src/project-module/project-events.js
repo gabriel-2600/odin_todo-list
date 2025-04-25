@@ -1,9 +1,10 @@
 import { createProjectObject, deleteProjectObject } from "./project.js";
 import { displayProjects } from "./project-DOM.js";
+// import { currentProjectID } from "../index.js";
 
-// Add Project Form Dialog
 const projectDialog = document.querySelector(".project-dialog");
 
+// Project Form Dialog Process
 const projectForm = document.querySelector(".project-form");
 const projectNameInput = document.querySelector("#project-name");
 projectForm.addEventListener("submit", (e) => {
@@ -19,7 +20,6 @@ projectForm.addEventListener("submit", (e) => {
 
 const closeProjectDialogBtn = document.querySelector(".project-cancel-btn");
 closeProjectDialogBtn.addEventListener("click", () => {
-  projectNameInput.value = "";
   projectDialog.close();
 });
 
