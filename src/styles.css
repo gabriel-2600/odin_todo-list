@@ -31,27 +31,8 @@ select {
   font: inherit;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
 p {
   text-wrap: pretty;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
 }
 
 /* CSS Variables */
@@ -97,7 +78,7 @@ h1 {
   font-weight: 300;
 }
 
-nav button {
+.add-project-btn {
   border: 0;
   width: 120px;
   font-size: 1.2rem;

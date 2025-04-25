@@ -33,7 +33,12 @@ class TodoItem {
 // });
 
 import { displayDefaultProject } from "./project-module/project-DOM.js";
-import { projectCreation } from "./project-module/project-dialog.js";
+import { showProjectFormDialog } from "./project-module/project-events.js";
 displayDefaultProject();
 
-projectCreation();
+const addProjectBtn = document.querySelector(".add-project-btn");
+addProjectBtn.addEventListener("click", () => {
+  showProjectFormDialog();
+});
+
+const deleteProjectBtn = document.querySelector(".delete-project-btn");

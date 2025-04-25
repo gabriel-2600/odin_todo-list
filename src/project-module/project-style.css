@@ -1,4 +1,43 @@
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+.project h3 {
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.delete-project-btn {
+  border: 0;
+  background-color: transparent;
+
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.hide {
+  display: none;
+}
+
 .project:hover {
   cursor: pointer;
   background-color: var(--light-blue);
+}
+
+.project:hover > .hide {
+  display: flex;
+}
+
+.delete-project-btn:hover {
+  border: 1px solid red;
 }

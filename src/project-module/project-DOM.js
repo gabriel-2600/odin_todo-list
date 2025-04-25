@@ -1,5 +1,6 @@
 import { defaultProject, projectList } from "./project";
 import "./project-style.css";
+import deletePNG from "./../assets/delete.png";
 
 function displayDefaultProject() {
   const defaultTodoContainer = document.querySelector(
@@ -25,7 +26,18 @@ function displayProjects() {
     const createdProjectName = document.createElement("h3");
     createdProjectName.textContent = projectList[i].projectName;
 
+    const projectDeleteBtn = document.createElement("button");
+    projectDeleteBtn.classList.add("delete-project-btn", "hide");
+
+    const deleteBtnImage = document.createElement("img");
+    deleteBtnImage.src = deletePNG;
+    deleteBtnImage.width = "20";
+    deleteBtnImage.height = "20";
+
+    projectDeleteBtn.appendChild(deleteBtnImage);
+
     projectDiv.appendChild(createdProjectName);
+    projectDiv.appendChild(projectDeleteBtn);
 
     projectListBar.appendChild(projectDiv);
   }

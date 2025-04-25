@@ -18,3 +18,6 @@ Tools used:
 - Github
 
 Lessons Learned:
+
+Credits:
+FLaticon, https://www.flaticon.com/free-icons/delete
