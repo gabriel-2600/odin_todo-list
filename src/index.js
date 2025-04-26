@@ -10,6 +10,7 @@ import {
 import {
   showTodoFormDialog,
   setCurrentProjectID,
+  deleteTodoAndUpdateDisplay,
 } from "./todo-module/todo-events.js";
 import { displayProjectTodoItems } from "./todo-module/todo-DOM.js";
 
@@ -58,11 +59,28 @@ nav.addEventListener("click", (event) => {
   }
 });
 
-// Add Todo per Project
+// Add Todo
 const addTodoBtn = document.querySelector(".add-todo-btn");
 addTodoBtn.addEventListener("click", () => {
   setCurrentProjectID(currentProjectID);
   showTodoFormDialog();
+});
+
+const todoContainer = document.querySelector(".todo-container");
+todoContainer.addEventListener("click", (event) => {
+  const deleteTodoImg = event.target.closest(".delete-todo-img");
+  const todoItem = event.target.closest(".todo-item-content");
+
+  if (todoItem) {
+    // const todoID = deleteTodoImg.parentElement.dataset.id;
+    // deleteTodoAndUpdateDisplay(currentProjectID, todoID);
+    console.log(todoItem.parentElement);
+  }
+
+  if (deleteTodoImg) {
+    const todoID = deleteTodoImg.parentElement.dataset.id;
+    deleteTodoAndUpdateDisplay(currentProjectID, todoID);
+  }
 });
 
 initialDisplay();

@@ -1,4 +1,4 @@
-import { createTodoItemObject } from "./todo";
+import { createTodoItemObject, deleteTodoItemObject } from "./todo";
 import { displayProjectTodoItems } from "./todo-DOM";
 
 let currentProjectID;
@@ -49,4 +49,10 @@ closeTodoDialogbtn.addEventListener("click", () => {
   todoDialog.close();
 });
 
-export { showTodoFormDialog, setCurrentProjectID };
+// Delete Todo Item
+function deleteTodoAndUpdateDisplay(currentProjectID, todoItemID) {
+  deleteTodoItemObject(currentProjectID, todoItemID);
+  displayProjectTodoItems(currentProjectID);
+}
+
+export { showTodoFormDialog, setCurrentProjectID, deleteTodoAndUpdateDisplay };

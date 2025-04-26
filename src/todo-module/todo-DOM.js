@@ -1,40 +1,46 @@
 import { projectList } from "../project-module/project";
+import deletePNG from "./../assets/delete.png";
 
 function displayProjectTodoItems(projectID) {
-  projectList.forEach((project) => {
-    if (project.id === projectID) {
-      const contentProjectName = document.querySelector(
-        ".content-project-name"
-      );
-      contentProjectName.innerHTML = "";
+  const project = projectList.find((project) => project.id === projectID);
 
-      const todoContainer = document.querySelector(".todo-container");
-      todoContainer.innerHTML = "";
+  if (!project) return;
 
-      contentProjectName.textContent = project.projectName;
+  const contentProjectName = document.querySelector(".content-project-name");
+  contentProjectName.innerHTML = "";
 
-      project.todoItems.forEach((todoItem) => {
-        const todoItemContainer = document.createElement("div");
-        todoItemContainer.classList.add("todo");
-        todoItemContainer.dataset.id = todoItem.id;
+  const todoContainer = document.querySelector(".todo-container");
+  todoContainer.innerHTML = "";
 
-        const todoItemContent = document.createElement("div");
-        todoItemContent.classList.add("todo-item-content");
+  contentProjectName.textContent = project.projectName;
 
-        const todoNameHeader = document.createElement("h4");
-        todoNameHeader.textContent = todoItem.title;
+  project.todoItems.forEach((todoItem) => {
+    const todoItemContainer = document.createElement("div");
+    todoItemContainer.classList.add("todo");
+    todoItemContainer.dataset.id = todoItem.id;
 
-        const todoDueDateHeader = document.createElement("h4");
-        todoDueDateHeader.textContent = todoItem.dueDate;
+    const todoItemContent = document.createElement("div");
+    todoItemContent.classList.add("todo-item-content");
 
-        todoItemContent.appendChild(todoNameHeader);
-        todoItemContent.appendChild(todoDueDateHeader);
+    const todoNameHeader = document.createElement("h4");
+    todoNameHeader.textContent = todoItem.title;
 
-        todoItemContainer.appendChild(todoItemContent);
+    const todoDueDateHeader = document.createElement("h4");
+    todoDueDateHeader.textContent = todoItem.dueDate;
 
-        todoContainer.appendChild(todoItemContainer);
-      });
-    }
+    todoItemContent.appendChild(todoNameHeader);
+    todoItemContent.appendChild(todoDueDateHeader);
+
+    const deleteBtnImage = document.createElement("img");
+    deleteBtnImage.src = deletePNG;
+    deleteBtnImage.width = "30";
+    deleteBtnImage.height = "30";
+    deleteBtnImage.classList.add("delete-todo-img");
+
+    todoItemContainer.appendChild(todoItemContent);
+    todoItemContainer.appendChild(deleteBtnImage);
+
+    todoContainer.appendChild(todoItemContainer);
   });
 }
 

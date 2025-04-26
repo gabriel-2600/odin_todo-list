@@ -1,24 +1,5 @@
-// const defaultProject = new Project("0", "My Todos");
-// const test2 = new Project("1", "Website Coding");
-
-// const projectsArray = [];
-// projectsArray.push(defaultProject);
-// projectsArray.push(test2);
-
-// const getCurrentProject = projectsArray.find(
-//   (project) => project.id === currentProjectID
-// );
-
-// const addTaskBtn = document.querySelector(".add-task-btn");
-// let click = 0;
-// addTaskBtn.addEventListener("click", (event) => {
-//   click++;
-//   const todoItem = new TodoItem(`Number: ${click}`);
-//   getCurrentProject.todoItems.push(todoItem);
-//   console.log(getCurrentProject);
-// });
-
 import { projectList } from "../project-module/project";
+import "./todo-style.css";
 
 class TodoItem {
   constructor(id, title, description, dueDate, priority) {
@@ -57,4 +38,17 @@ function createTodoItemObject(
   }
 }
 
-export { createTodoItemObject };
+function deleteTodoItemObject(currentProjectID, todoItemID) {
+  const project = projectList.find(
+    (project) => project.id === currentProjectID
+  );
+
+  project.todoItems.forEach((todo, index) => {
+    if (todo.id === todoItemID) {
+      project.todoItems.splice(index, 1);
+      return;
+    }
+  });
+}
+
+export { createTodoItemObject, deleteTodoItemObject };
