@@ -7,7 +7,10 @@ import {
 } from "./project-module/project-events.js";
 
 // Todo Module
-import { showTodoFormDialog } from "./todo-module/todo-events.js";
+import {
+  showTodoFormDialog,
+  setCurrentProjectID,
+} from "./todo-module/todo-events.js";
 import { displayProjectTodoItems } from "./todo-module/todo-DOM.js";
 
 // CSS Style
@@ -15,6 +18,7 @@ import "./styles.css";
 
 // Initial Display (Default Project)
 let currentProjectID;
+
 function initialDisplay() {
   currentProjectID = getDefaultProjectID;
 
@@ -54,9 +58,10 @@ nav.addEventListener("click", (event) => {
   }
 });
 
-// Add Task
-const addTaskBtn = document.querySelector(".add-task-btn");
-addTaskBtn.addEventListener("click", () => {
+// Add Todo per Project
+const addTodoBtn = document.querySelector(".add-todo-btn");
+addTodoBtn.addEventListener("click", () => {
+  setCurrentProjectID(currentProjectID);
   showTodoFormDialog();
 });
 

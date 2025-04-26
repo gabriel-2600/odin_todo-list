@@ -5,12 +5,13 @@ const projectDialog = document.querySelector(".project-dialog");
 
 // Project Form Dialog Process
 const projectForm = document.querySelector(".project-form");
-const projectNameInput = document.querySelector("#project-name");
 projectForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const projectName = projectNameInput.value;
-  createProjectObject(projectName);
+  const projectNameInput = document.querySelector("#project-name");
+  const projectNameValue = projectNameInput.value;
+
+  createProjectObject(projectNameValue);
   displayProjects();
 
   projectNameInput.value = "";

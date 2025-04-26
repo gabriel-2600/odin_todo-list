@@ -11,7 +11,7 @@ const projectList = [];
 // Default Project
 const defaultProject = new Project("0", "My Todos");
 const getDefaultProjectID = defaultProject.id;
-defaultProject.todoItems.push("test");
+
 projectList.push(defaultProject);
 
 // Create Project

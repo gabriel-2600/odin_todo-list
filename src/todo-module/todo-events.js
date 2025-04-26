@@ -1,16 +1,52 @@
-import { currentProjectID } from "../index.js";
+import { createTodoItemObject } from "./todo";
+import { displayProjectTodoItems } from "./todo-DOM";
 
-const taskDialog = document.querySelector(".task-dialog");
+let currentProjectID;
 
-// Todo Form Dialog Process
-
-function showTodoFormDialog() {
-  taskDialog.showModal();
+function setCurrentProjectID(getCurrentProjectID) {
+  currentProjectID = getCurrentProjectID;
 }
 
-const closeTaskDialogbtn = document.querySelector(".task-cancel-btn");
-closeTaskDialogbtn.addEventListener("click", () => {
-  taskDialog.close();
+// Todo Form Dialog Process
+const todoDialog = document.querySelector(".todo-dialog");
+
+const todoForm = document.querySelector(".todo-form");
+todoForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const todoNameInput = document.querySelector("#todo-name");
+  const todoDescriptionInput = document.querySelector("#todo-description");
+  const todoDueDateInput = document.querySelector("#todo-due-date");
+  const todoPriorityInput = document.querySelector(
+    'input[name="todo-priority"]:checked'
+  );
+
+  const todoNameValue = todoNameInput.value;
+  const todoDescriptionValue = todoDescriptionInput.value;
+  const todoDueDateValue = todoDueDateInput.value;
+  const todoPriorityValue = todoPriorityInput.value;
+
+  createTodoItemObject(
+    currentProjectID,
+    todoNameValue,
+    todoDescriptionValue,
+    todoDueDateValue,
+    todoPriorityValue
+  );
+  displayProjectTodoItems(currentProjectID);
+
+  closeTodoDialogbtn.click();
 });
 
-export { showTodoFormDialog };
+// Open Todo Form Dialog
+function showTodoFormDialog() {
+  todoDialog.showModal();
+}
+
+// Close Todo Form Dialog
+const closeTodoDialogbtn = document.querySelector(".todo-cancel-btn");
+closeTodoDialogbtn.addEventListener("click", () => {
+  todoDialog.close();
+});
+
+export { showTodoFormDialog, setCurrentProjectID };
