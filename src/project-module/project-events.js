@@ -1,6 +1,5 @@
 import { createProjectObject, deleteProjectObject } from "./project.js";
 import { displayProjects } from "./project-DOM.js";
-// import { currentProjectID } from "../index.js";
 
 const projectDialog = document.querySelector(".project-dialog");
 
@@ -28,9 +27,9 @@ function showProjectFormDialog() {
 }
 
 // Delete Project
-function deleteProjectAndDisplay(projectID) {
+function deleteProjectAndUpdateNav(projectID) {
   deleteProjectObject(projectID);
   displayProjects();
 }
 
-export { showProjectFormDialog, deleteProjectAndDisplay };
+export { showProjectFormDialog, deleteProjectAndUpdateNav };

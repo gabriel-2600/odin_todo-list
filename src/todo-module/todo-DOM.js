@@ -3,6 +3,13 @@ import { projectList } from "../project-module/project";
 function displayProjectTodoItems(projectID) {
   projectList.forEach((project) => {
     if (project.id === projectID) {
+      const contentProjectName = document.querySelector(
+        ".content-project-name"
+      );
+      contentProjectName.innerHTML = "";
+
+      contentProjectName.textContent = project.projectName;
+
       const todoContainer = document.querySelector(".todo-container");
       todoContainer.innerHTML = "";
 

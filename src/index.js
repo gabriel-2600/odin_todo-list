@@ -3,7 +3,7 @@ import { getDefaultProjectID } from "./project-module/project.js";
 import { displayDefaultProject } from "./project-module/project-DOM.js";
 import {
   showProjectFormDialog,
-  deleteProjectAndDisplay,
+  deleteProjectAndUpdateNav,
 } from "./project-module/project-events.js";
 
 // Todo Module
@@ -22,6 +22,7 @@ function initialDisplay() {
   displayProjectTodoItems(currentProjectID);
 }
 
+// Nav Bar Event Listeners
 const nav = document.querySelector("nav");
 nav.addEventListener("click", (event) => {
   const addProjectBtn = event.target.classList.contains("add-project-btn");
@@ -44,8 +45,12 @@ nav.addEventListener("click", (event) => {
   // Delete Project
   if (deleteProjectBtn) {
     const projectID = deleteProjectBtn.parentElement.dataset.id;
+    deleteProjectAndUpdateNav(projectID);
 
-    deleteProjectAndDisplay(projectID);
+    if (projectID === currentProjectID) {
+      currentProjectID = getDefaultProjectID;
+      displayProjectTodoItems(currentProjectID);
+    }
   }
 });
 
