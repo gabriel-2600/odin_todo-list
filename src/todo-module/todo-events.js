@@ -1,4 +1,8 @@
-import { createTodoItemObject, deleteTodoItemObject } from "./todo";
+import {
+  createTodoItemObject,
+  deleteTodoItemObject,
+  updateTodoIsDone,
+} from "./todo";
 import { displayProjectTodoItems, displayTodoItemInfoDialog } from "./todo-DOM";
 
 let currentProjectID;
@@ -49,14 +53,21 @@ closeTodoDialogbtn.addEventListener("click", () => {
   todoDialog.close();
 });
 
+// Update Todo Item if finished
+function updateIsDoneAndDisplay(currentProjectID, todoItemID, isDoneValue) {
+  updateTodoIsDone(currentProjectID, todoItemID, isDoneValue);
+  displayProjectTodoItems(currentProjectID);
+}
+
+// Show Todo Item description
+function openTodoInfoDialog(todoID) {
+  displayTodoItemInfoDialog(currentProjectID, todoID);
+}
+
 // Delete Todo Item
 function deleteTodoAndUpdateDisplay(currentProjectID, todoItemID) {
   deleteTodoItemObject(currentProjectID, todoItemID);
   displayProjectTodoItems(currentProjectID);
-}
-
-function openTodoInfoDialog(todoID) {
-  displayTodoItemInfoDialog(currentProjectID, todoID);
 }
 
 export {
@@ -64,4 +75,5 @@ export {
   setCurrentProjectID,
   deleteTodoAndUpdateDisplay,
   openTodoInfoDialog,
+  updateIsDoneAndDisplay,
 };

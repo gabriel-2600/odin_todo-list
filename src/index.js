@@ -12,6 +12,7 @@ import {
   setCurrentProjectID,
   deleteTodoAndUpdateDisplay,
   openTodoInfoDialog,
+  updateIsDoneAndDisplay,
 } from "./todo-module/todo-events.js";
 import { displayProjectTodoItems } from "./todo-module/todo-DOM.js";
 
@@ -87,9 +88,9 @@ todoContainer.addEventListener("click", (event) => {
     const todoID = isDoneCheckBox.parentElement.dataset.id;
 
     if (isDoneCheckBox.checked) {
-      console.log(todoID + " is done!");
+      updateIsDoneAndDisplay(currentProjectID, todoID, true);
     } else {
-      console.log(todoID + " is not yet done");
+      updateIsDoneAndDisplay(currentProjectID, todoID, false);
     }
   }
 

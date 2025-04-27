@@ -30,12 +30,15 @@ function displayProjectTodoItems(projectID) {
     const isDoneCheckBox = document.createElement("input");
     isDoneCheckBox.setAttribute("type", "checkbox");
     isDoneCheckBox.classList.add("todo-checkbox");
-    if (todoItem.isDone) {
-      isDoneCheckBox.checked = true;
-    }
 
     const todoNameHeader = document.createElement("h4");
     todoNameHeader.textContent = todoItem.title;
+
+    if (todoItem.isDone) {
+      isDoneCheckBox.checked = true;
+      todoItemContent.style.opacity = "0.4";
+      todoNameHeader.style.textDecoration = "line-through";
+    }
 
     const todoDueDateHeader = document.createElement("h4");
     todoDueDateHeader.textContent = todoItem.dueDate;

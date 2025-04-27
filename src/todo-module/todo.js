@@ -51,4 +51,16 @@ function deleteTodoItemObject(currentProjectID, todoItemID) {
   });
 }
 
-export { createTodoItemObject, deleteTodoItemObject };
+function updateTodoIsDone(currentProjectID, todoItemID, isDoneValue) {
+  const project = projectList.find(
+    (project) => project.id === currentProjectID
+  );
+
+  const todoItem = project.todoItems.find(
+    (todoItemElement) => todoItemElement.id === todoItemID
+  );
+
+  todoItem.isDone = isDoneValue;
+}
+
+export { createTodoItemObject, deleteTodoItemObject, updateTodoIsDone };
