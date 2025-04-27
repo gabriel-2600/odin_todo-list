@@ -1,3 +1,8 @@
 .todo {
   display: flex;
 }
+
+.todo-item-content {
+  display: flex;
+  gap: 50px;
+}

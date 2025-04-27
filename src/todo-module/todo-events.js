@@ -1,5 +1,5 @@
 import { createTodoItemObject, deleteTodoItemObject } from "./todo";
-import { displayProjectTodoItems } from "./todo-DOM";
+import { displayProjectTodoItems, displayTodoItemInfoDialog } from "./todo-DOM";
 
 let currentProjectID;
 
@@ -55,4 +55,13 @@ function deleteTodoAndUpdateDisplay(currentProjectID, todoItemID) {
   displayProjectTodoItems(currentProjectID);
 }
 
-export { showTodoFormDialog, setCurrentProjectID, deleteTodoAndUpdateDisplay };
+function openTodoInfoDialog(todoID) {
+  displayTodoItemInfoDialog(currentProjectID, todoID);
+}
+
+export {
+  showTodoFormDialog,
+  setCurrentProjectID,
+  deleteTodoAndUpdateDisplay,
+  openTodoInfoDialog,
+};
