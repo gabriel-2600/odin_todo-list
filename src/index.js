@@ -72,19 +72,32 @@ addTodoBtn.addEventListener("click", () => {
 const todoContainer = document.querySelector(".todo-container");
 todoContainer.addEventListener("click", (event) => {
   const todoItem = event.target.closest(".todo-item-content");
+  const isDoneCheckBox = event.target.closest(".todo-checkbox");
   const deleteTodoImg = event.target.closest(".delete-todo-img");
 
   if (todoItem) {
     const todoID = todoItem.parentElement.dataset.id;
-    // console.log(todoID);
+
     setCurrentProjectID(currentProjectID);
     openTodoInfoDialog(todoID);
+    return;
+  }
+
+  if (isDoneCheckBox) {
+    const todoID = isDoneCheckBox.parentElement.dataset.id;
+
+    if (isDoneCheckBox.checked) {
+      console.log(todoID + " is done!");
+    } else {
+      console.log(todoID + " is not yet done");
+    }
   }
 
   if (deleteTodoImg) {
     const todoID = deleteTodoImg.parentElement.dataset.id;
 
     deleteTodoAndUpdateDisplay(currentProjectID, todoID);
+    return;
   }
 });
 

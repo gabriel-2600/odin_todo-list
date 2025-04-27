@@ -27,6 +27,13 @@ function displayProjectTodoItems(projectID) {
     const todoItemContent = document.createElement("div");
     todoItemContent.classList.add("todo-item-content");
 
+    const isDoneCheckBox = document.createElement("input");
+    isDoneCheckBox.setAttribute("type", "checkbox");
+    isDoneCheckBox.classList.add("todo-checkbox");
+    if (todoItem.isDone) {
+      isDoneCheckBox.checked = true;
+    }
+
     const todoNameHeader = document.createElement("h4");
     todoNameHeader.textContent = todoItem.title;
 
@@ -47,6 +54,7 @@ function displayProjectTodoItems(projectID) {
     deleteBtnImage.height = "30";
     deleteBtnImage.classList.add("delete-todo-img");
 
+    todoItemContainer.appendChild(isDoneCheckBox);
     todoItemContainer.appendChild(todoItemContent);
     todoItemContainer.appendChild(deleteBtnImage);
 
@@ -64,6 +72,9 @@ function displayTodoItemInfoDialog(currentProjectID, todoID) {
   const todoItemDialog = document.querySelector(".todo-item-dialog");
   todoItemDialog.innerHTML = "";
 
+  const todoDescriptionHeader = document.createElement("h4");
+  todoDescriptionHeader.textContent = "Description:";
+
   const todoDescription = document.createElement("h4");
   todoDescription.textContent = `${todoItem.description}`;
 
@@ -71,6 +82,7 @@ function displayTodoItemInfoDialog(currentProjectID, todoID) {
   closeBtn.textContent = "Close";
   closeBtn.classList.add("close-todo-info-btn");
 
+  todoItemDialog.appendChild(todoDescriptionHeader);
   todoItemDialog.appendChild(todoDescription);
   todoItemDialog.appendChild(closeBtn);
 
