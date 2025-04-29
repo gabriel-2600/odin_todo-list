@@ -37,16 +37,26 @@ function displayProjectTodoItems(projectID) {
 
     if (todoItem.isDone) {
       isDoneCheckBox.checked = true;
-      todoItemContent.style.opacity = "0.4";
+      todoItemContent.style.opacity = "0.2";
       todoNameHeader.style.textDecoration = "line-through";
     }
 
     const todoDueDateHeader = document.createElement("h4");
-    todoDueDateHeader.textContent = todoItem.dueDate;
+    todoDueDateHeader.textContent = `Due Date: ${todoItem.dueDate}`;
 
     const todoPriorityContainer = document.createElement("div");
     todoPriorityContainer.classList.add("todo-priority-container");
     todoPriorityContainer.textContent = `${todoItem.priority}`;
+    if (todoItem.priority === "Low") {
+      todoPriorityContainer.style.border = "1px solid green";
+      todoPriorityContainer.style.backgroundColor = "#d1ffbd";
+    } else if (todoItem.priority === "Medium") {
+      todoPriorityContainer.style.border = "1px solid orange";
+      todoPriorityContainer.style.backgroundColor = "#FFDEAD";
+    } else if (todoItem.priority === "High") {
+      todoPriorityContainer.style.border = "1px solid red";
+      todoPriorityContainer.style.backgroundColor = "#eabebe";
+    }
 
     todoItemContent.appendChild(todoNameHeader);
     todoItemContent.appendChild(todoDueDateHeader);

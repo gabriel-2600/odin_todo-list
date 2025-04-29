@@ -42,7 +42,6 @@ function deleteProjectObject(projectID) {
 
 function saveToLocalStorage() {
   localStorage.setItem("projects", JSON.stringify(projectList));
-  console.log("test");
 }
 
 function getToLocalStorage() {

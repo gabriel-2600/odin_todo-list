@@ -1,8 +1,46 @@
+.content {
+  padding: 20px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .todo {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  background-color: var(--sky-blue);
+  padding: 10px 20px;
+  border-radius: 24px;
 }
 
 .todo-item-content {
   display: flex;
-  gap: 50px;
+  flex-grow: 2;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.todo-item-content h4 {
+  width: 215px;
+}
+
+.todo-item-content:hover {
+  cursor: pointer;
+  border: 1px solid var(--blue);
+}
+
+.todo-priority-container {
+  text-align: center;
+  width: 100px;
+  padding: 5px;
+  border-radius: 24px;
 }
