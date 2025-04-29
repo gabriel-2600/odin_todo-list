@@ -6,13 +6,18 @@ class Project {
   }
 }
 // Store the Project Objects into the array
-const projectList = [];
+let projectList = [];
 
 // Default Project
 const defaultProject = new Project("0", "My Todos");
 const getDefaultProjectID = defaultProject.id;
 
 projectList.push(defaultProject);
+if (!getToLocalStorage()) {
+  saveToLocalStorage();
+} else {
+  projectList = getToLocalStorage();
+}
 
 // Create Project
 function createProjectObject(projectName) {
@@ -20,6 +25,7 @@ function createProjectObject(projectName) {
 
   const project = new Project(randomID, projectName);
   projectList.push(project);
+  saveToLocalStorage();
 }
 
 // Delete Project
@@ -27,8 +33,21 @@ function deleteProjectObject(projectID) {
   for (let i = 0; i < projectList.length; i++) {
     if (projectList[i].id === projectID) {
       projectList.splice(i, 1);
+      saveToLocalStorage();
+
+      return;
     }
   }
+}
+
+function saveToLocalStorage() {
+  localStorage.setItem("projects", JSON.stringify(projectList));
+  console.log("test");
+}
+
+function getToLocalStorage() {
+  const projects = JSON.parse(localStorage.getItem("projects"));
+  return projects;
 }
 
 export {
@@ -37,4 +56,6 @@ export {
   getDefaultProjectID,
   createProjectObject,
   deleteProjectObject,
+  saveToLocalStorage,
+  getToLocalStorage,
 };

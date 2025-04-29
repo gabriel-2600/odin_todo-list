@@ -1,17 +1,20 @@
-import { defaultProject, projectList } from "./project";
+// import { defaultProject, projectList } from "./project";
+import { getToLocalStorage } from "./project";
 import "./project-style.css";
 import deletePNG from "./../assets/delete.png";
 
 function displayDefaultProject() {
+  const projectList = getToLocalStorage();
+
   const defaultTodoContainer = document.querySelector(
     ".default-todo-container"
   );
   defaultTodoContainer.innerHTML = "";
 
-  defaultTodoContainer.dataset.id = defaultProject.id;
+  defaultTodoContainer.dataset.id = projectList[0].id;
 
   const defaultProjectName = document.createElement("h3");
-  defaultProjectName.textContent = defaultProject.projectName;
+  defaultProjectName.textContent = projectList[0].projectName;
 
   const projectContent = document.createElement("div");
   projectContent.classList.add("project-content");
@@ -21,6 +24,8 @@ function displayDefaultProject() {
 }
 
 function displayProjects() {
+  const projectList = getToLocalStorage();
+
   const projectListBar = document.querySelector(".project-list-bar");
   projectListBar.innerHTML = "";
 

@@ -1,6 +1,9 @@
 // Project Module
 import { getDefaultProjectID } from "./project-module/project.js";
-import { displayDefaultProject } from "./project-module/project-DOM.js";
+import {
+  displayDefaultProject,
+  displayProjects,
+} from "./project-module/project-DOM.js";
 import {
   showProjectFormDialog,
   deleteProjectAndUpdateNav,
@@ -26,6 +29,7 @@ function initialDisplay() {
   currentProjectID = getDefaultProjectID;
 
   displayDefaultProject();
+  displayProjects();
   displayProjectTodoItems(currentProjectID);
 }
 
