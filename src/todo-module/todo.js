@@ -1,4 +1,4 @@
-import { projectList } from "../project-module/project";
+import { projectList, saveToLocalStorage } from "../project-module/project";
 import "./todo-style.css";
 
 class TodoItem {
@@ -35,6 +35,7 @@ function createTodoItemObject(
     );
 
     project.todoItems.push(todoItem);
+    saveToLocalStorage();
   }
 }
 
@@ -46,6 +47,8 @@ function deleteTodoItemObject(currentProjectID, todoItemID) {
   project.todoItems.forEach((todo, index) => {
     if (todo.id === todoItemID) {
       project.todoItems.splice(index, 1);
+
+      saveToLocalStorage();
       return;
     }
   });
@@ -61,6 +64,8 @@ function updateTodoIsDone(currentProjectID, todoItemID, isDoneValue) {
   );
 
   todoItem.isDone = isDoneValue;
+
+  saveToLocalStorage();
 }
 
 export { createTodoItemObject, deleteTodoItemObject, updateTodoIsDone };

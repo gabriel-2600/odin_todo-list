@@ -1,7 +1,8 @@
-import { projectList } from "../project-module/project";
+import { getToLocalStorage } from "../project-module/project";
 import deletePNG from "./../assets/delete.png";
 
 function retrieveProject(projectID) {
+  const projectList = getToLocalStorage();
   const project = projectList.find((project) => project.id === projectID);
 
   if (!project) return;
