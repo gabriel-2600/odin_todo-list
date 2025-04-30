@@ -1,13 +1,20 @@
-/* 
-:root {
-   --blue: #1b56fd;
-  --light-blue: #60b5ff;
-  --sky-blue: #afddff;
-  --pale-blue: #c6e7ff;
-  --semi-white: #fbfbfb;
-  --light-red: #eabebe;
-  --dark-red: #af6d6d;
-} */
+/* Project Dialog Form */
+.project-dialog {
+  border: 1px solid var(--blue);
+  background-color: var(--semi-white);
+  border-radius: 12px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
 
 .project {
   display: flex;

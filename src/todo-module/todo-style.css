@@ -1,7 +1,75 @@
+/* Todo Dialog Form */
+.todo-dialog {
+  border: 1px solid var(--blue);
+  background-color: var(--semi-white);
+  border-radius: 12px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Todo Item Description Dialog */
+.todo-item-dialog {
+  border: 1px solid var(--blue);
+  background-color: var(--semi-white);
+  border-radius: 12px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.todo-description-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+
+  border: 1px solid var(--blue);
+  border-radius: 12px;
+}
+
 .content {
   padding: 20px;
 }
 
+/* Content Header */
+.content-header {
+  margin-bottom: 20px;
+}
+
+.content-project-name {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.add-todo-btn {
+  border: 0;
+  width: 120px;
+  font-size: 1.2rem;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: var(--light-blue);
+
+  color: var(--semi-white);
+  font-weight: 600;
+}
+
+.add-todo-btn:hover {
+  cursor: pointer;
+}
+
+/* Todo Container */
 .todo-container {
   display: flex;
   flex-direction: column;
@@ -27,6 +95,7 @@
 
   border-radius: 16px;
   padding: 10px;
+  transition: 0.2s;
 }
 
 .todo-item-content h4 {
@@ -35,7 +104,8 @@
 
 .todo-item-content:hover {
   cursor: pointer;
-  border: 1px solid var(--blue);
+  background-color: var(--pale-blue);
+  transition: 0.2s;
 }
 
 .todo-priority-container {

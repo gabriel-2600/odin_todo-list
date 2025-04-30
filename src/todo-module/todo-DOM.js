@@ -42,7 +42,11 @@ function displayProjectTodoItems(projectID) {
     }
 
     const todoDueDateHeader = document.createElement("h4");
-    todoDueDateHeader.textContent = `Due Date: ${todoItem.dueDate}`;
+    if (!todoItem.dueDate) {
+      todoDueDateHeader.textContent = `No Due Date`;
+    } else {
+      todoDueDateHeader.textContent = `Due Date: ${todoItem.dueDate}`;
+    }
 
     const todoPriorityContainer = document.createElement("div");
     todoPriorityContainer.classList.add("todo-priority-container");
@@ -90,7 +94,12 @@ function displayTodoItemInfoDialog(currentProjectID, todoID) {
   todoDescriptionHeader.textContent = "Description:";
 
   const todoDescription = document.createElement("h4");
-  todoDescription.textContent = `${todoItem.description}`;
+  todoDescription.classList.add("todo-description-container");
+  if (!todoItem.description) {
+    todoDescription.textContent = `N/A`;
+  } else {
+    todoDescription.textContent = `${todoItem.description}`;
+  }
 
   const closeBtn = document.createElement("button");
   closeBtn.textContent = "Close";
