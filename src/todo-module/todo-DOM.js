@@ -1,5 +1,6 @@
 import { getToLocalStorage } from "../project-module/project";
 import deletePNG from "./../assets/delete.png";
+import editPNG from "./../assets/edit.png";
 
 function retrieveProject(projectID) {
   const projectList = getToLocalStorage();
@@ -72,9 +73,16 @@ function displayProjectTodoItems(projectID) {
     deleteBtnImage.height = "30";
     deleteBtnImage.classList.add("delete-todo-img");
 
+    const editTodoImage = document.createElement("img");
+    editTodoImage.src = editPNG;
+    editTodoImage.width = "30";
+    editTodoImage.height = "30";
+    editTodoImage.classList.add("edit-todo-img");
+
     todoItemContainer.appendChild(isDoneCheckBox);
     todoItemContainer.appendChild(todoItemContent);
     todoItemContainer.appendChild(deleteBtnImage);
+    todoItemContainer.appendChild(editTodoImage);
 
     todoContainer.appendChild(todoItemContainer);
   });

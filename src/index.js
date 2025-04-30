@@ -18,6 +18,7 @@ import {
   updateIsDoneAndDisplay,
 } from "./todo-module/todo-events.js";
 import { displayProjectTodoItems } from "./todo-module/todo-DOM.js";
+import { showEditTodoFormDialog } from "./todo-module/edit-todo.js";
 
 // CSS Style
 import "./styles.css";
@@ -79,6 +80,7 @@ todoContainer.addEventListener("click", (event) => {
   const todoItem = event.target.closest(".todo-item-content");
   const isDoneCheckBox = event.target.closest(".todo-checkbox");
   const deleteTodoImg = event.target.closest(".delete-todo-img");
+  const editTodoImg = event.target.closest(".edit-todo-img");
 
   if (todoItem) {
     const todoID = todoItem.parentElement.dataset.id;
@@ -103,6 +105,12 @@ todoContainer.addEventListener("click", (event) => {
 
     deleteTodoAndUpdateDisplay(currentProjectID, todoID);
     return;
+  }
+
+  if (editTodoImg) {
+    const todoID = editTodoImg.parentElement.dataset.id;
+
+    showEditTodoFormDialog(currentProjectID, todoID);
   }
 });
 

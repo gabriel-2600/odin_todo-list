@@ -21,3 +21,4 @@ Lessons Learned:
 
 Credits:
 FLaticon, https://www.flaticon.com/free-icons/delete
+Flaticon, https://www.flaticon.com/free-icons/edit

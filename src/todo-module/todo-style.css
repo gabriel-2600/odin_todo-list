@@ -16,6 +16,24 @@
   padding: 10px;
 }
 
+/* Edit Todo Dialog Form */
+.edit-todo-dialog {
+  border: 1px solid var(--blue);
+  background-color: var(--semi-white);
+  border-radius: 12px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.edit-todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
 /* Todo Item Description Dialog */
 .todo-item-dialog {
   border: 1px solid var(--blue);
@@ -113,4 +131,12 @@
   width: 100px;
   padding: 5px;
   border-radius: 24px;
+}
+
+.todo-checkbox:hover {
+  cursor: pointer;
+}
+
+.delete-todo-img {
+  cursor: pointer;
 }

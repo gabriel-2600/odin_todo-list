@@ -53,7 +53,7 @@ closeTodoDialogbtn.addEventListener("click", () => {
   todoDialog.close();
 });
 
-// Update Todo Item if finished
+// Update Todo Item if done
 function updateIsDoneAndDisplay(currentProjectID, todoItemID, isDoneValue) {
   updateTodoIsDone(currentProjectID, todoItemID, isDoneValue);
   displayProjectTodoItems(currentProjectID);

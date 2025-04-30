@@ -70,6 +70,54 @@
 
     <dialog class="todo-item-dialog"></dialog>
 
+    <dialog class="edit-todo-dialog">
+      <form action="" class="edit-todo-form">
+        <div>
+          <label for="edit-todo-name">Task Name: </label>
+          <input type="text" id="edit-todo-name" maxlength="16" required />
+        </div>
+
+        <div>
+          <label for="edit-todo-description">Description: </label>
+          <textarea id="edit-todo-description"></textarea>
+        </div>
+
+        <div>
+          <label for="edit-todo-due-date">Due Date: </label>
+          <input type="date" id="edit-todo-due-date" />
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="edit-todo-low-priority"
+            name="edit-todo-priority"
+            value="Low"
+          />
+          <label for="edit-todo-low-priority">Low Priority</label>
+
+          <input
+            type="radio"
+            id="edit-todo-medium-priority"
+            name="edit-todo-priority"
+            value="Medium"
+          />
+          <label for="edit-todo-medium-priority">Medium Priority</label>
+
+          <input
+            type="radio"
+            id="edit-todo-high-priority"
+            name="edit-todo-priority"
+            value="High"
+          />
+          <label for="edit-todo-high-priority">High Priority</label>
+        </div>
+
+        <button type="submit" class="edit-todo-btn">Edit Task</button>
+        <button type="reset" class="edit-todo-cancel-btn">Cancel</button>
+      </form>
+    </dialog>
+
     <div class="main-container">
       <nav>
         <h1>Todo Tracker</h1>
