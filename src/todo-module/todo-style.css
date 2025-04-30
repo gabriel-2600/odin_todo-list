@@ -140,3 +140,7 @@
 .delete-todo-img {
   cursor: pointer;
 }
+
+.edit-todo-img {
+  cursor: pointer;
+}

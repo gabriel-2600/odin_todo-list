@@ -19,6 +19,10 @@ Tools used:
 
 Lessons Learned:
 
+- Learned and implemented Single Responsibility Principle as much as possible to maintain code organization.
+- Learned about local storage and implemented it in my project to store project and todo items locally.
+- Enhanced my problem solving skills to structure the flow of the system.
+
 Credits:
 FLaticon, https://www.flaticon.com/free-icons/delete
 Flaticon, https://www.flaticon.com/free-icons/edit
