@@ -2,7 +2,7 @@
 
 Dynamic Todo List Webpage made for the [Project: Todo List of The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-todo-list)
 
-Live Preview:
+Live Preview: https://gabriel-2600.github.io/odin_todo-list/
 
 Tech Stack:
 
@@ -24,5 +24,6 @@ Lessons Learned:
 - Enhanced my problem solving skills to structure the flow of the system.
 
 Credits:
-FLaticon, https://www.flaticon.com/free-icons/delete
-Flaticon, https://www.flaticon.com/free-icons/edit
+
+- Flaticon, https://www.flaticon.com/free-icons/delete
+- Flaticon, https://www.flaticon.com/free-icons/edit
